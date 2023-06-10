@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap');
+:root {
+    /* --bg-color: #121212; */
+    --bg-color: #fdd200;
+    /* --card-color: #040303; */
+    --card-color: #F3721E;
+    --card-back-color: #ffde5a;
+    --card-color-green: #54F958;
+    --glossy-bg-one: #242424;
+    --glossy-bg-two: #353535;
+    --red: #c12727;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 13px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--card-color);
+    border-radius: 12px;
+    border: 1px solid #000;
+}
+
+.card-container,
+.logo,
+.moves-container,
+.git-link,
+.git-btn {
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Cherry Bomb One', cursive;
+    flex-direction: column;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 45px;
+}
+
+.game-container {
+    grid-template-columns: repeat(4, 1fr);
+    display: grid;
+    place-content: center;
+    gap: 1dvh;
+    margin: 13px 13dvw;
+    min-height: 450px;
+}
+
+.card-container {
+    min-width: 150px;
+    min-height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    /* background-color: var(--card-color); */
+    color: #fff;
+    transition: all 0.5s ease-out;
+    transform: translateX(-5%);
+    /* opacity:0; */
+}
+
+.card-container.added {
+    /* transform: translateX(-20%); */
+    /* transition-delay: 0.1s; */
+    /* opacity:1; */
+    transform: translateX(0%);
+}
+
+.card-container.removing {
+    transition-delay: 0.1s;
+}
+
+.card-container.wiggle {
+    animation: wiggle 1.5s infinite;
+}
+
+.flip-container {
+    perspective: 1000px;
+}
+
+.flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border-radius: 12px;
+}
+
+.card-fancy {
+    border: 1px solid #161616;
+    box-shadow: 8px 9px 0px 1px #000000;
+}
+
+.flip .flipper {
+    box-shadow: -8px 9px 0px 1px #000000;
+}
+
+.front,
+.back {
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+}
+
+.front {
+    background-color: var(--card-color);
+    z-index: 2;
+    border-radius: 12px;
+}
+
+.back {
+    -webkit-transition: background-color 500ms ease;
+    transition: background-color 500ms ease;
+    background-color: var(--card-back-color);
+    transform: rotateY(180deg);
+}
+
+.done .flipper .back {
+    background-color: var(--card-color-green);
+}
+
+.flip-container.flip .flipper {
+    transform: rotateY(180deg);
+}
+
+.qm-img {
+    width: 90%;
+    height: 90%;
+}
+
+.card-img {
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+    place-self: center;
+}
+
+.header {
+    width: 90%;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    flex: 1;
+    object-fit: contain;
+    width: 100%;
+    min-width: 40%;
+}
+
+.logo {
+    width: 91px;
+    height: 61px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.logo:hover {
+    transform: translateY(12px)
+}
+
+.reset-btn {
+    height: 42px;
+    padding: 6px 19px;
+    border-radius: 22px;
+    cursor: pointer;
+    background-color: var(--red);
+    color: white;
+    line-height: 25px;
+    outline: none;
+    transition: all 0.4s ease;
+    border: none;
+    font-family: 'Cherry Bomb One', cursive;
+    box-shadow: 5px 6px 0px 1px #000000;
+    width: 153px;
+    font-size: 22px;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.reset-btn:hover {
+    box-shadow: -7px -1px 0px 1px #000000;
+}
+
+.card-container:hover {
+    animation: jump 1.9s infinite;
+}
+
+.card-container.done:hover {
+    animation: none;
+    animation: wiggle 0.9s infinite;
+}
+
+.card-container.done .flipper {
+    width: 80%;
+    height: 80%;
+}
+
+.moves_container {
+    font-size: 23px;
+    background-color: var(--card-color);
+    padding: 14px;
+    border-radius: 90px;
+    margin-top: 19px;
+    border: 4px solid #000;
+    box-shadow: -8px 7px 1px #000;
+    cursor: pointer;
+    transition: all 0.5s ease-in;
+}
+
+.moves_container:hover {
+    box-shadow: 8px 7px 1px #000;
+}
+
+.git-btn {
+    background-color: var(--card-color);
+    width: 90%;
+    padding: 9px;
+    margin: 21px 0px;
+    min-height: 108px;
+    border-radius: 13px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.5s ease-out;
+}
+
+.git-link {
+    text-decoration: none;
+    font-size: 19px;
+    color: #000000;
+    font-size: 26px;
+}
+
+.git-btn.card-fancy:has(.git-link:hover) {
+    box-shadow: -11px 11px 0px 1px #000000;
+}
+
+.git-link:hover {
+    color: #ffffff;
+}
+
+@keyframes jump {
+    0% {
+        transform: translateY(0px);
+    }
+    25% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes wiggle {
+    0% {
+        transform: rotate(0deg);
+    }
+    80% {
+        transform: rotate(0deg);
+    }
+    85% {
+        transform: rotate(15deg);
+    }
+    95% {
+        transform: rotate(-15deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@media (max-width: 600px) {
+    .game-container {
+        grid-template-columns: repeat(3, 1fr);
+        margin: 0px;
+    }
+    .card-container {
+        min-width: 105px;
+        min-height: 105px;
+    }
+}
