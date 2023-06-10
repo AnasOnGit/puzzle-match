@@ -1,6 +1,7 @@
 # Puzzle Match
 
-This is a simple puzzle game where you have to match all the same cards. 
+![Puzzle Match Logo](./puzzel_match_logo.png)
+This is a simple puzzle game where you have to match all the same cards.
 
 ## Play the Game
 
@@ -34,8 +35,3 @@ If you want to contribute to this project, please follow these steps:
 3. Make your changes and commit them.
 4. Push your changes to your forked repository.
 5. Create a pull request.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
-
