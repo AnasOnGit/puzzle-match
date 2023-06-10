@@ -1,11 +1,13 @@
 # Puzzle Match
 
 ![Puzzle Match Logo](./puzzel_match_logo.png)
+<br></br>
+
 This is a simple puzzle game where you have to match all the same cards.
 
 ## Play the Game
 
-You can play the game online by clicking [here](https://anasongit.github.io/puzzel_match/).
+You can play the game online by clicking [here](https://anasongit.github.io/puzzle-match/).
 
 ## How to Play
 
