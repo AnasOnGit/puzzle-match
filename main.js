@@ -1,7 +1,7 @@
 import "./style.css";
 import logo from "./puzzel_match_logo.png";
-import { shuffleArray } from "./modules/shuffleArray";
-import { createCard } from "./modules/card";
+import { shuffleArray } from "./modules/shuffleArray.js";
+import { createCard } from "./modules/card.js";
 
 // creating game container
 const gameContainer = document.createElement("div");
