@@ -1,5 +1,3 @@
-import "./style.css";
-import logo from "./puzzel_match_logo.png";
 import { shuffleArray } from "./modules/shuffleArray.js";
 import { createCard } from "./modules/card.js";
 
@@ -206,7 +204,7 @@ imgLogoContainer.classList.add("logo-container");
 
 const imgLogo = document.createElement("img");
 imgLogo.classList.add("logo");
-imgLogo.setAttribute("src", logo);
+imgLogo.setAttribute("src", "./puzzel_match_logo.png");
 imgLogoContainer.append(imgLogo);
 // creating a button to reset the game
 const resetBtn = document.createElement("button");
