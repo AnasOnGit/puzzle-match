@@ -204,7 +204,8 @@ imgLogoContainer.classList.add("logo-container");
 
 const imgLogo = document.createElement("img");
 imgLogo.classList.add("logo");
-imgLogo.setAttribute("src", "./puzzel_match_logo.png");
+imgLogo.setAttribute("loading", "lazy");
+imgLogo.setAttribute("src", "/puzzel_match_logo.png");
 imgLogoContainer.append(imgLogo);
 // creating a button to reset the game
 const resetBtn = document.createElement("button");
@@ -339,27 +340,3 @@ clickCard.forEach((card) => {
         }
     });
 });
-
-const oldSetupGame = () => {
-    resetGame();
-    shuffledArray = shuffleArray(items);
-    if (gameContainer.children.length > 0) {
-        // gameContainer.childNodes.forEach((child) => {
-        //   child.classList.add("removing");
-        //   child.style.transitionDelay = `${index * 0.1}s`;
-        // });
-        gameContainer.childNodes.forEach((child) => {
-            setTimeout(() => {
-                gameContainer.removeChild(child);
-            }, 1000);
-        });
-        // setTimeout(() => {
-        //   gameContainer.removeChild(child);
-        // }, 500);
-    }
-    shuffledArray.map((item) => {
-        setTimeout(() => {
-            gameContainer.append(createCard(item));
-        }, 1000);
-    });
-};

@@ -5,10 +5,10 @@ export const createCard = (info, cardEvent) => {
     cardContainer.className = "card-container flip-container added";
     cardContainer.innerHTML = ` <div class="flipper card-fancy">
     <div class="front">
-      <img class="qm-img" alt="Guess" src="https://www.onlygfx.com/wp-content/uploads/2018/09/4-comic-question-mark-4.png" />
+      <img loading="lazy" class="qm-img" alt="Guess" src="https://www.onlygfx.com/wp-content/uploads/2018/09/4-comic-question-mark-4.png" />
     </div>
     <div class="back">
-      <img class="card-img" alt="Image Clicked!" src="${info.url}" data-id='${info.id}' />
+      <img loading="lazy" class="card-img" alt="Image Clicked!" src="${info.url}" data-id='${info.id}' />
     </div>
   </div>`;
 
